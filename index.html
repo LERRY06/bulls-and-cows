@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="bg" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Игра на бикове и крави - познай тайното число!">
+
+        <title>Бикове и крави</title>
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="app-container">
+            <header class="header">
+                <div class="logo">
+                    <span class="logo-icon">🐂</span>
+                    <h1>Бикове и крави</h1>
+                </div>
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    aria-label="Смени темата"
+                    title="Смени темата">
+                    🌙
+                </button>
+            </header>
+            <main class="main-content">
+                <section class="game-intro">
+                    <h2>Познай тайното число!</h2>
+                    <p>
+                        Компютърът е избрал тайно четирицифрено число.
+                        Можеш ли да го откриеш?
+                    </p>
+                    <div class="game-rules">
+                        <span>4 цифри</span>
+                        <span>Без повторения</span>
+                        <span>Класически режим</span>
+                    </div>
+                </section>
+                <section class="game-board">
+                    <div class="secret-number">
+                        <h3>Тайното число</h3>
+                        <div class="secret-digits">
+                            <span>?</span>
+                            <span>?</span>
+                            <span>?</span>
+                            <span>?</span>
+                        </div>
+                    </div>
+
+                    <!-- VICTORY MESSAGE -->
+
+<div id="victory-message" class="victory-message hidden">
+
+    <div class="victory-icon">🏆</div>
+
+    <h2>Поздравления!</h2>
+
+    <p>Ти откри тайното число!</p>
+
+    <div class="victory-number" id="victory-number">
+        0000
+    </div>
+
+    <p class="victory-attempts">
+        Брой опити:
+        <strong id="victory-attempt-count">0</strong>
+    </p>
+
+    <button type="button" id="victory-new-game">
+        Играй отново
+    </button>
+
+</div>
+<div class="guess-section">
+
+    <h3>Твоето предположение</h3>
+
+    <form id="guess-form">
+
+        
+<input
+    type="text"
+    id="guess-input"
+    placeholder="Въведи 4 цифри"
+    maxlength="4"
+    autocomplete="off"
+    inputmode="numeric"
+    pattern="[0-9]{4}"
+    aria-label="Въведи четирицифрено предположение"
+    required>
+
+
+        <button type="submit" id="guess-button">
+            Провери
+        </button>
+
+    </form>
+
+    <p id="validation-message" aria-live="polite"></p>
+
+</div>
+
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Опити</span>
+                            <strong id="attempt-count">0</strong>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Най-добър резултат</span>
+                            <strong id="best-score">-</strong>
+                        </div>
+                    </div>
+                    <div class="history-section">
+                        <h3>История на опитите</h3>
+                        <div class="history-header">
+                            <span>№</span>
+                            <span>Число</span>
+                            <span>Бикове</span>
+                            <span>Крави</span>
+                        </div>
+                         <div id="history-list">
+                            <p class="empty-history">
+                                Все още няма направени опити.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="game-controls">
+                        <button type="button" id="new-game-button">
+                            Нова игра
+                        </button>
+                        <button type="button" id="restart-button">
+                            Рестартирай
+                        </button>
+                    </div>
+                    
+
+
+                
+                </section>
+            </main>
+            <footer class="footer">
+                <p>Бикове и крави &copy; 2026</p>
+                <p>by Val'eto</p>
+            </footer>
+        </div>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
