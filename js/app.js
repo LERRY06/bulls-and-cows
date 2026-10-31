@@ -214,6 +214,16 @@ function saveBestScore() {
 
 function showVictoryScreen() {
 
+    // Показваме тайното число в четирите полета
+    const secretDigits = document.querySelectorAll(
+        ".secret-digits span"
+    );
+
+    secretDigits.forEach((digit, index) => {
+        digit.textContent = secretNumber[index];
+    });
+
+    // Показваме победния екран
     victoryNumber.textContent = secretNumber;
 
     victoryAttemptCount.textContent = attempts;
@@ -298,6 +308,11 @@ guessForm.addEventListener("submit", function(event) {
 // ========================================
 
 function resetGameInterface() {
+
+    // Възстановяваме въпросителните знаци
+document.querySelectorAll(".secret-digits span").forEach(digit => {
+    digit.textContent = "?";
+});
 
     attempts = 0;
     gameOver = false;
